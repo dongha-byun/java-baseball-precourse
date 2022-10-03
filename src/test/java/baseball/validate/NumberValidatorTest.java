@@ -20,6 +20,6 @@ class NumberValidatorTest {
 
         assertThatIllegalArgumentException().isThrownBy(
                 () -> NumberValidator.validateUnique(list)
-        ).withMessage("같은 값이 2번 이상 검출되어 게임을 종료합니다.");
+        ).withMessage("같은 값이 2번 이상 검출되었습니다.");
     }
 }
