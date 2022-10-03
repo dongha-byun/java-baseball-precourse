@@ -1,6 +1,7 @@
 package baseball.validate;
 
-import java.util.Collections;
+import camp.nextstep.edu.missionutils.Randoms;
+
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -10,11 +11,11 @@ public abstract class NumberValidator {
 
     // 숫자 중복 체크
     public static void validateUnique(List<Integer> list){
-        final List<Integer> sorted = list;
-        Set<Integer> set = new HashSet<>(sorted);
+        Set<Integer> set = new HashSet<>(list);
 
-        if(set.size() != sorted.size()){
-            throw new IllegalArgumentException("같은 값이 2번 이상 검출되어 게임을 종료합니다.");
+        if(set.size() != list.size()){
+            throw new IllegalArgumentException("같은 값이 2번 이상 검출되었습니다.");
         }
     }
+
 }

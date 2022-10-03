@@ -6,19 +6,16 @@ import java.util.regex.Pattern;
 public abstract class InputValidator {
 
     // 1. 입력 값 길이 체크
-    // 무조건 세 자리를 받아야함
     public static void validateInputLength(String input){
         if(input.length() != 3){
-            throw new IllegalArgumentException("자릿수 입력이 옳바르지 않습니다. 게임을 종료합니다.");
+            throw new IllegalArgumentException("자릿수 입력이 옳바르지 않습니다.");
         }
     }
 
     // 2. 입력 값 중 숫자 외 값이 있는지 체크
     public static void validateInputNumber(String input){
-        String regex = "^[1-9]*$";
-
-        if(!Pattern.matches(regex, input)){
-            throw new IllegalArgumentException("숫자 외 입력이 확인되었습니다. 게임을 종료합니다.");
+        if(!Pattern.matches("^[1-9]*$", input)){
+            throw new IllegalArgumentException("숫자 외 입력이 확인되었습니다.");
         }
     }
 }
